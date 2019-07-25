@@ -56,7 +56,6 @@ Rather than using debug or verbose mode to display the output on the screen, go 
 
 
 ``` yaml
-{%raw%}
 ---
 - name: GENERATE OS REPORT FROM ROUTERS
   hosts: cisco
@@ -77,7 +76,6 @@ Rather than using debug or verbose mode to display the output on the screen, go 
       template:
         src: os_report.j2
         dest: reports/{{ inventory_hostname }}.md
-{%endraw%}
 ```
 
 
@@ -93,7 +91,6 @@ The next step is to create a Jinja2 template. Ansible will look for the template
 Using `vi`, `nano` or another text editor, go ahead and create the file called `os_report.j2` under the `templates` directory. Add the following into the template file:
 
 
-{%raw%}
 ``` python
 
 
@@ -104,7 +101,6 @@ Using `vi`, `nano` or another text editor, go ahead and create the file called `
 
 
 ```
-{%endraw%}  
 This file simply contains some of the variables we have been using in our playbooks until now.
 
 > Note: Python inbuilt methods for datatypes are available natively in Jinja2 making it very easy to manipulate the formatting etc.
@@ -183,7 +179,6 @@ While it is nice to have the data, it would be even better to consolidate all th
 
 
 ``` yaml
-{%raw%}
 ---
 - name: GENERATE OS REPORT FROM ROUTERS
   hosts: cisco
@@ -211,7 +206,6 @@ While it is nice to have the data, it would be even better to consolidate all th
         dest: network_os_report.md
       delegate_to: localhost
       run_once: yes
-{%endraw%}
 ```
 
 

@@ -98,7 +98,6 @@ In **Step 2** you captured the output of the task into a variable called `config
 
 
 ``` yaml
-{%raw%}
 ---
 - name: BACKUP ROUTER CONFIGURATIONS
   hosts: cisco
@@ -115,7 +114,6 @@ In **Step 2** you captured the output of the task into a variable called `config
       copy:
         src: "{{config_output.backup_path}}"
         dest: "./backup/{{inventory_hostname}}.config"
-{%endraw%}
 ```
 
 
@@ -191,7 +189,6 @@ Write a new task using Ansible's `lineinfile` module to remove the first line.
 
 
 ``` yaml
-{%raw%}
 ---
 - name: BACKUP ROUTER CONFIGURATIONS
   hosts: cisco
@@ -214,7 +211,6 @@ Write a new task using Ansible's `lineinfile` module to remove the first line.
         path: "./backup/{{inventory_hostname}}.config"
         line: "Building configuration..."
         state: absent
-{%endraw%}
 ```
 
 
@@ -227,7 +223,6 @@ Before we run the playbook, we need to add one more task to remove the second li
 
 
 ``` yaml
-{%raw%}
 ---
 - name: BACKUP ROUTER CONFIGURATIONS
   hosts: cisco
@@ -256,7 +251,6 @@ Before we run the playbook, we need to add one more task to remove the second li
         path: "./backup/{{inventory_hostname}}.config"
         regexp: 'Current configuration.*'
         state: absent
-{%endraw%}                          
 ```
 
 

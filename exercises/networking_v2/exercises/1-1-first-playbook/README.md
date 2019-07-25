@@ -146,7 +146,6 @@ Running a playbook in verbose mode is a good option to validate the output from 
 Write 2 tasks that display the routers' OS version and serial number.
 
 ``` yaml
-{%raw%}
 ---
 - name: GATHER INFORMATION FROM ROUTERS
   hosts: cisco
@@ -164,7 +163,6 @@ Write 2 tasks that display the routers' OS version and serial number.
     - name: DISPLAY SERIAL NUMBER
       debug:
         msg: "The serial number is:{{ ansible_net_serialnum }}"
-{%endraw%}        
 ```
 
 

@@ -137,7 +137,6 @@ Add this to your playbook:
 
 
 ``` yaml
-{%raw%}
 ---
 - name: GENERATE INTERFACE REPORT
   hosts: cisco
@@ -159,7 +158,6 @@ Add this to your playbook:
         file: "parsers/show_interfaces.yaml"
         content: "{{ output.stdout[0] }}"
 
-{%endraw%}
 ```
 
 Let's understand this task in a little more depth. The `command_parser` is referencing a file called `show_interfaces.yaml` within the `parsers` directory. For this lab, the parser has been pre-populated for you. The parsers are written to handle the output from standard show commands on various network platforms.
@@ -176,7 +174,6 @@ Feel free to view the contents of the parser file. You will notice how it uses r
 Add a new task to view the contents being returned by the `command_parser`
 
 ``` yaml
-{%raw%}
 ---
 - name: GENERATE INTERFACE REPORT
   hosts: cisco
@@ -201,7 +198,6 @@ Add a new task to view the contents being returned by the `command_parser`
     - name: DISPLAY THE PARSED DATA
       debug:
         var: interface_facts
-{%endraw%}
 ```
 
 
@@ -319,7 +315,6 @@ Our next step is to use the template module to generate a report from the above 
 
 
 ``` yaml
-{%raw%}
 ---
 - name: GENERATE INTERFACE REPORT
   hosts: cisco
@@ -357,7 +352,6 @@ Our next step is to use the template module to generate a report from the above 
       delegate_to: localhost
       run_once: yes
 
-{%endraw%}
 ```
 
 > Note: For this lab the  Jinja2 template has been pre-populated for you. Feel free to look at the file **interface_facts.j2** in the **templates** directory.
