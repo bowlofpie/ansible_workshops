@@ -1,4 +1,4 @@
-# Ansible Linklight - Ansible Engine
+# Ansible Engine
 
 This content is a multi-purpose toolkit for effectively demonstrating Ansible's capabilities or providing informal workshop training in various forms -- instructor-led, hands-on or self-paced.
 
